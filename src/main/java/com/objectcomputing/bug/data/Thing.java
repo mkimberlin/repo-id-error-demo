@@ -10,17 +10,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.Objects;
 import java.util.UUID;
 
-@Setter
-@Getter
 @Entity
-@NoArgsConstructor
 @Introspected
 @Table(name = "things")
 public class Thing {
@@ -43,6 +37,9 @@ public class Thing {
 
     public Thing(@Nullable String something) {
         this(null, something);
+    }
+
+    public Thing() {
     }
 
     @Override
@@ -68,5 +65,20 @@ public class Thing {
         return Objects.hash(id, something);
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getSomething() {
+        return something;
+    }
+
+    public void setSomething(String something) {
+        this.something = something;
+    }
 }
 
