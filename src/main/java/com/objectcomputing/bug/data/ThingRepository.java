@@ -8,6 +8,4 @@ import java.util.UUID;
 
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-public interface PrivateNoteRepository extends CrudRepository<PrivateNote, UUID> {
-
-}
+public interface ThingRepository extends CrudRepository<Thing, UUID> {}
